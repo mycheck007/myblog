@@ -1,0 +1,60 @@
+.pages a,.pages span {
+    display:inline-block;
+    padding:2px 10px;
+    margin:0 1px;
+    border:1px solid #f0f0f0;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.pages a,.pages li {
+    display:inline-block;
+    list-style: none;
+    text-decoration:none; color:#58A0D3;
+}
+.pages a.first,.pages a.prev,.pages a.next,.pages a.end{
+    margin:0;
+}
+.pages a:hover{
+    border-color:#50A8E6;
+}
+.pages span.current{
+    background:#50A8E6;
+    color:#FFF;
+    font-weight:700;
+    border-color:#50A8E6;
+}
+/*ajax弹出层*/
+.prompt{
+    height: 40px;
+    overflow: hidden;
+}
+.prompt span{
+    left:335px;
+    top:-36px;
+    position: relative;
+    height:40px;
+}
+#tip_message {
+    z-index: 10000;
+    position: fixed;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+ 
+#tip_message span {
+    background-color: #03C440;
+    opacity: .8;
+    padding: 20px 50px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+ 
+#tip_message span.error {
+    background-color: #DB4246;
+}

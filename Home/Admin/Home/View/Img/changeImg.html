@@ -1,0 +1,81 @@
+<include file="Public:header" />
+<style>
+  .caroul li img{
+      width: 400px;
+      height: 140px;
+  }
+  .anchorbutton{
+    text-align: center;
+  }
+  .headbar li img{
+    width: 800px;
+    height: 200px;
+  }
+  form p{
+    text-align: center;
+  }
+</style>
+  <div class="pageheader">
+    <h1 class="pagetitle">图片更换</h1>
+    <span class="pagedesc"></span>         
+    <ul class="hornav">
+      <li class="current"><a href="#caroul">首页轮播图</a></li>           
+              
+    </ul>
+  </div>
+  <!--pageheader-->
+  <div id="contentwrapper" class="contentwrapper">
+  <!--轮播图替换-->
+    <div id="caroul" class="subcontent">
+        <div class="contenttitle2">
+          <h3>首页轮播图片替换</h3>
+        </div><!--contenttitle-->
+        
+        <ul class="morephotolist caroul">
+          <!-- <foreach name="caroul" item="vo"> -->
+          <li>
+            <a href="javascript:void(0)"><img src="./../../../../../../Public/Uploads/{$vo.img_path}" alt="轮播图片" /></a>
+            <br>
+            <a href="javascript:void(0)" class="anchorbutton confirmbutton" onclick="changebtn({$vo.id})">点击替换</a>
+          </li> 
+          <!-- </foreach> -->
+        </ul><!--morephotolist-->
+        
+    </div> 
+  </div>
+  <div id="popup_overlay" style="position: absolute;display:none; z-index: 99998; top: 0px; left: 0px; width: 100%; height: 602px; opacity: 0.01; background: rgb(255, 255, 255);"></div>
+    <div id="popup_container" class="ui-draggable" style="position: fixed;display:none; z-index: 99999; padding: 0px; margin: 0px; min-width: 514px; max-width: 514px; top: 150px; left: 370.5px;">
+      <h1 id="popup_title">选择替换的图片</h1>
+      <div id="popup_content" class="confirm">
+      <div id="popup_message">
+      <form enctype="multipart/form-data">
+        <p>
+          <label>上传相关图片：</label>
+          <span class="field">
+            <input type="file" class="largeinput" id="uploadImgFile" name="photo">
+            <input type="hidden" value="" class="id">
+          </span>
+        </p>
+        <p><small class="desc" style="color:#FD9326;">*图片格式：jpg, gif, png, jpeg (最大不超过500kB)</small></p> 
+        <div id="popup_panel">
+          <input type="button" value="&nbsp;确认&nbsp;" id="popup_ok"> 
+          <input type="button" value="&nbsp;取消&nbsp;" id="popup_cancel">
+        </div>
+    </form>
+    </div>
+  </div>
+  </div>
+    <input type="hidden" value="__APP__/home/Img/saveChange" class="uploadurl">
+ <include file="Public:footer" />
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/jquery-1.7.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/jquery.cookie.js"></script>
+ <!-- uniform表单样式 -->
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/jquery.uniform.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/jquery.validate.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/jquery.tagsinput.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/charCount.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/ui.spinner.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/plugins/chosen.jquery.min.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/custom/general.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/custom/forms.js"></script>
